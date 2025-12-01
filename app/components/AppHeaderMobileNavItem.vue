@@ -1,11 +1,12 @@
 <template>
   <li class="w-full">
-    <a href="#" :class="linkClasses"> <slot></slot> </a>
+    <NuxtLink :to="link" :class="linkClasses"> <slot></slot> </NuxtLink>
   </li>
 </template>
 
 <script setup lang="ts">
 const {
+  link = '/',
   linkClasses = 'inline-block w-full rounded-md p-2 text-center text-sm font-semibold hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700',
-} = defineProps<{ linkClasses?: string }>()
+} = defineProps<{ linkClasses?: string; link?: string }>()
 </script>
